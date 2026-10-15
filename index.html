@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="A small 3D playground for new game ideas."
+    />
+    <title>Very Boring Museum</title>
+    <script type="module" crossorigin src="./assets/index-Cx2AdNg-.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BWoGMMWB.css">
+  </head>
+  <body>
+    <main id="app">
+      <canvas id="scene" aria-label="Interactive 3D scene"></canvas>
+
+      <section class="game-hud" aria-label="Game status">
+        <div class="hud-status">
+          <span id="game-status" role="status" hidden></span>
+        </div>
+        <div class="hud-objective" id="game-objective"></div>
+      </section>
+      <details class="game-settings">
+        <summary aria-label="Game settings">☰</summary>
+        <section class="toolbar" aria-label="Player controls">
+          <div class="actions">
+            <label
+              >Graphics
+              <select id="render-quality" aria-label="Graphics quality">
+                <option value="auto">Auto</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+            </label>
+            <label class="color-control">
+              <span>Color</span>
+              <input id="object-color" type="color" value="#4fa3d9" />
+            </label>
+            <button
+              id="reset-position"
+              class="secondary"
+              type="button"
+              title="Reset position and camera"
+            >
+              Reset
+            </button>
+            <button
+              id="reset-camera"
+              class="secondary"
+              type="button"
+              title="Reset camera"
+            >
+              Camera
+            </button>
+            <label
+              class="follow-control"
+              title="Lock the camera angle and follow the player"
+            >
+              <input id="camera-follow" type="checkbox" role="switch" />
+              <span>Follow</span>
+            </label>
+          </div>
+        </section>
+
+        <aside class="hint">
+          <strong>Arrow keys</strong> to move · <strong>Space</strong> to jump ·
+          <strong>Drag</strong> to orbit · <strong>Scroll</strong> to zoom
+        </aside>
+      </details>
+
+      <section class="movement-panel" aria-label="Move player">
+        <span id="position-label" class="position-label" aria-live="polite"
+          >x 0.0 · z 0.0</span
+        >
+        <div class="d-pad">
+          <button
+            class="move-button move-up"
+            type="button"
+            data-move="up"
+            aria-label="Move player forward"
+          >
+            ↑
+          </button>
+          <button
+            class="move-button move-left"
+            type="button"
+            data-move="left"
+            aria-label="Move player left"
+          >
+            ←
+          </button>
+          <button
+            class="move-button move-down"
+            type="button"
+            data-move="down"
+            aria-label="Move player backward"
+          >
+            ↓
+          </button>
+          <button
+            class="move-button move-right"
+            type="button"
+            data-move="right"
+            aria-label="Move player right"
+          >
+            →
+          </button>
+        </div>
+      </section>
+      <section class="touch-controls" aria-label="Touch controls">
+        <div
+          id="joystick"
+          class="joystick"
+          role="group"
+          aria-label="Movement joystick: drag to move"
+        >
+          <span class="joystick-thumb" aria-hidden="true"></span>
+          <span class="joystick-label" aria-hidden="true">Move</span>
+        </div>
+        <div
+          id="look-joystick"
+          class="joystick look-joystick"
+          role="group"
+          aria-label="Look joystick: drag to look around"
+          hidden
+        >
+          <span class="joystick-thumb" aria-hidden="true"></span>
+          <span class="joystick-label" aria-hidden="true">Look</span>
+        </div>
+        <button
+          id="jump-button"
+          class="jump-button"
+          type="button"
+          aria-label="Jump"
+        >
+          Jump
+        </button>
+      </section>
+    </main>
+
+    <script src="./world-config.js"></script>
+  </body>
+</html>
